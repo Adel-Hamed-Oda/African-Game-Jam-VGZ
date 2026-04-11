@@ -21,7 +21,7 @@ public class PrimeManager : MonoBehaviour
             return;
         }
     }
-
+        
     public void SetTimeScale(float scale)
     {
         Time.timeScale = scale;

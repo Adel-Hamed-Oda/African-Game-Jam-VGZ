@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36">
+  <diagram name="Page-1" id="-6ALbZp8vpOE-_PYt68j">
+    <mxGraphModel dx="1030" dy="642" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pjNO6ErLrBoSQkmIuMzt-1" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=default;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Summary&lt;/h1&gt;&lt;div&gt;You are a blob of nanobots of a tiny size (between microscopic and golf ball) The goal is to escape the lab by going through walls and other stuff (hence borders) losing mass in the progress. You will need to conserve mass to stay alive and other things that reduce mass include heat spots, electricity, and other nano bot blobs.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="160" width="280" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="game-loop-1" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=default;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;1. The Micro Loop (Minute-to-Minute Gameplay)&lt;/h1&gt;&lt;div&gt;This is what the player will be doing constantly. It revolves around a risk-reward cycle of resource management.&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;Assess &amp;amp; Navigate:&lt;/b&gt; The player explores a micro-environment (e.g., inside a computer tower, across a lab desk, through a ventilation shaft) and encounters a barrier (a wall, a glass beaker, an electrical grid).&lt;/li&gt;&lt;li&gt;&lt;b&gt;Spend Mass (Phase):&lt;/b&gt; To bypass the &amp;quot;border,&amp;quot; the player actively chooses to phase through it, leaving a trail of nanobots behind. Their blob physically shrinks, making them more vulnerable but also changing their physics (e.g., smaller = faster, jump higher, or fit through tiny cracks).&lt;/li&gt;&lt;li&gt;&lt;b&gt;Replenish (Absorb):&lt;/b&gt; The player hunts for loose screws, metal shavings, spilled conductive gel, or idle nanobots to absorb, growing their blob back to a safe size.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Survive Hazards:&lt;/b&gt; The player must navigate around environmental hazards. Heat spots melt mass away gradually, electricity instantly strips a chunk of mass, and rival blobs try to consume them.&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="320" width="480" x="360" y="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

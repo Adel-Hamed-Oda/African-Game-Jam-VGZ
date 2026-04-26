@@ -1,0 +1,84 @@
+<mxfile host="65bd71144e">
+    <diagram id="93XevFfKIqJGNnGvg6Bc" name="Page-1">
+        <mxGraphModel dx="2366" dy="1222" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="9" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="4" target="7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Boot Game: a tiny platformer that acts as a tutorial for the basic movements like moving and jumping and the like" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="320" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="SEQUENCE" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=48;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="360" y="250" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="edgeStyle=none;html=1;" parent="1" source="7" target="12" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Start with 4&lt;div&gt;&lt;div&gt;games iniitailly&lt;/div&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="13" vertex="1" connectable="0">
+                    <mxGeometry x="0.24" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="Transition Step, the game shuts down into a black screen after a forced death, and the window is slowely zoomed out of. This is where the player learns about windows and how they work when it comes to the system" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="320" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Window Interactions&lt;/h1&gt;&lt;p&gt;- Close, minimize and move windows around, last window clicked is put on top of the list&lt;br&gt;- Change window size, this is required for some puzzles to be solved&lt;/p&gt;&lt;p&gt;- put games in split screen mode, in which the player transitions from one game to another&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="1200" width="450" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="SktyAir Something" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="320" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Fire Something" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="480" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Earth Something" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="160" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Water Something" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="560" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Void" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="640" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;RAM interactions&lt;/h1&gt;&lt;div&gt;Each special level increases the amount of RAM you have, allowing you to play multiple games at once and as such create a semi-linear approach, the final level is unlocked after completing all 5 mini games&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="960" width="160" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Levels&lt;/h1&gt;&lt;div&gt;each minigame (probably except the last one) should consist of between 4-6 small levels. The first level of each game should have no dependencies and as such unlocked from the start (after the tut). The last levels in each game should unlock certain parts of a password needed to open the final mini game&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="960" width="180" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="NOTES" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=48;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="130" y="910" width="300" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="THEMES" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=48;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="-380" y="260" width="300" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Tutorial&lt;/h1&gt;&lt;div&gt;dull with white background and black &quot;interactables&quot;, aka ground. Used only to teach movement so no need for complicated stuff, we need it to look intentionally bad but not too bad or the judges might remove it lol, it would make for a funy twist at the start&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="320" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;OS&lt;/h1&gt;&lt;div&gt;the colorful transition where most of the everything would appear. it&#39;s starts off as a bit dull but not as dull as the tut, then becomes very vibrant after completing the game. it contains some resemblance to the windows os with a start button at the bottom left, a recycle bin that could activate some easter eggs or even be used to help you progress, etc. as well as some text files with jokes or hell even HINTS inside and yellow folders that do nothing. Most importantly however. THE 4 MINI GAMES (5 after finishing the first 4).we could add more interactions later but this should be enough&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="520" width="200" height="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Generic View of minigames&lt;/h1&gt;&lt;div&gt;Each of the first 4 minigames should represent the 4 elements fire, water, air and earth. they should have colors and hues representing each one, including their obstacles, pickups, final keys and maybe even how the player looks in each environment (if feasable). The game icons should also indicate what each one looks like from the inside&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="-320" y="880" width="200" height="240" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Water&lt;/h1&gt;&lt;div&gt;Content includes ice patforms, ice ground, icy background with frozen trees and or PENGUINDS LES GO. Waterfalls (somehow, ignore this plothole) that would interact with other worlds, icy spikes to kill player&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="-560" y="320" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Earth&lt;/h1&gt;&lt;div&gt;Content includes rocky grounds, dirty grounds (whcih can interact with water probably) certain metals, etc. floating rocks for magic reasons, and a background full of mountains and deserts (or maybe not IDK). Also maybe one of the metals is a magnet that can be used for special stuff in other worlds. Rocky spikes to try to kill player&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="-560" y="520" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Air&lt;/h1&gt;&lt;div&gt;Mostrly sky islands, can be green ones. Wind gushing everywhere with constant breeze in the background. torrents that push the player up, whcih could be used to get over obstacles in other worlds. horizontal torrents could also be used to go quickly and such&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="-560" y="760" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Fire&lt;/h1&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="-560" y="960" width="200" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.625;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="12" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

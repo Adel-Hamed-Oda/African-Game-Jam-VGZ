@@ -129,8 +129,9 @@ GameObject:
   m_Component:
   - component: {fileID: 149300482}
   - component: {fileID: 149300483}
+  - component: {fileID: 149300484}
   m_Layer: 0
-  m_Name: Window
+  m_Name: OS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,8 +167,23 @@ MonoBehaviour:
   dragStep: 50
   resizeStep: 50
   folderWindowPrefab: {fileID: 0}
-  textFileWindowPrefab: {fileID: 0}
-  desktopTransform: {fileID: 0}
+  textFileWindowPrefab: {fileID: 2571019114752019798, guid: 2d4337204c88ef74eabc300fec4ba481, type: 3}
+  desktopTransform: {fileID: 1241903431}
+--- !u!114 &149300484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149300481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc5553e40e88a1418332bf256fb44b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IconManager
+  folderSprite: {fileID: 1084870471915973256, guid: 6c5b0e4722f5a014385327db3da31a9f, type: 3}
+  textFileSprite: {fileID: -5690122954830693929, guid: 6c5b0e4722f5a014385327db3da31a9f, type: 3}
+  unknownFileSprite: {fileID: -4842122482347598607, guid: bb9a418bfbacc1940b74260745e4d744, type: 3}
 --- !u!1 &1126913229
 GameObject:
   m_ObjectHideFlags: 0

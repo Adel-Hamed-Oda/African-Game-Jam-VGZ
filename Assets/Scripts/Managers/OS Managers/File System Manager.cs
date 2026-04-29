@@ -66,10 +66,9 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>
     {
         Root = new FolderNode("C:", null);
 
-        FolderNode documents = CreateFolder(Root, "Documents");
-        CreateFile(documents, "Readme.txt", "Welcome to Unity OS!");
+        CreateFile(Root, "Readme.txt", "Welcome to Unity OS!");
 
-        Debug.Log("Created file at: " + GetNodeByPath("C:/Documents/Readme.txt")?.GetPath());
+        Debug.Log("Created file at: " + GetNodeByPath("C:/Readme.txt")?.GetPath());
     }
 
     public FolderNode CreateFolder(FolderNode parent, string name)

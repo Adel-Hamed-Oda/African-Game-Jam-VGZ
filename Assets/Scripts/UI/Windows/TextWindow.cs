@@ -17,7 +17,7 @@ public class TextWindow : Window
 
         if (windowTitle != null)
         {
-            windowTitle.text = currentFile.Name + " - Notepad";
+            windowTitle.text = currentFile.Name;
         }
 
         contentInput.text = currentFile.Content;

@@ -10,16 +10,10 @@ public class FolderWindow : Window
 
     public override void Initialize(FSNode node)
     {
-        base.Initialize(node); // Calls the base class logic to set title
+        base.Initialize(node);
 
         currentFolder = node as FolderNode;
         if (currentFolder == null) return;
-
-        // Overwrite the title to show the full path
-        if (windowTitle != null)
-        {
-            windowTitle.text = currentFolder.GetPath();
-        }
 
         RefreshView();
     }

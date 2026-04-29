@@ -1,74 +1,33 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
-public abstract class FSNode
-{
-    public string Name { get; set; }
-    public FolderNode Parent { get; set; }
-
-    public string GetPath()
-    {
-        if (Parent == null) return Name; // Root node (e.g., "C:")
-        return Parent.GetPath() + "/" + Name;
-    }
-}
-public enum FileType
-{
-    Text,
-    Image
-}
-public class FileNode : FSNode
-{
-    public FileType Type { get; set; }
-    public string Content { get; set; }
-
-    public FileNode(string name, FolderNode parent)
-    {
-        Name = name;
-        Parent = parent;
-    }
-}
-public class FolderNode : FSNode
-{
-    public List<FSNode> Children { get; private set; } = new List<FSNode>();
-
-    public FolderNode(string name, FolderNode parent)
-    {
-        Name = name;
-        Parent = parent;
-    }
-
-    public void AddChild(FSNode node)
-    {
-        if (!Children.Contains(node))
-        {
-            node.Parent = this;
-            Children.Add(node);
-        }
-    }
-
-    public void RemoveChild(FSNode node)
-    {
-        if (Children.Contains(node))
-        {
-            node.Parent = null;
-            Children.Remove(node);
-        }
-    }
-}
 
 public class FileSystemManager : SingletonBehaviour<FileSystemManager>
 {
     public FolderNode Root { get; private set; }
+    public FolderNode DesktopFolder { get; private set; } // Added reference to the Desktop
 
     void Start()
     {
         Root = new FolderNode("C:", null);
 
-        CreateFile(Root, "Readme.txt", "Welcome to Unity OS!");
+        // 1. Create the Desktop Folder
+        DesktopFolder = CreateFolder(Root, "Desktop");
 
-        Debug.Log("Created file at: " + GetNodeByPath("C:/Readme.txt")?.GetPath());
+        // 2. Add some test files to the Desktop
+        CreateFile(DesktopFolder, "testing", FileType.Text, "testing testing testing testing testing");
+        FolderNode folder1 = CreateFolder(DesktopFolder, "testing1");
+        FolderNode folder2 = CreateFolder(DesktopFolder, "testing2");
+        FolderNode folder3 = CreateFolder(DesktopFolder, "testing3");
+        CreateFile(folder1, "testing", FileType.Text, "testing testing testing testing testing");
+        CreateFile(folder2, "testing", FileType.Text, "testing testing testing testing testing");
+        CreateFile(folder3, "testing", FileType.Text, "testing testing testing testing testing");
+
+        // 3. Initialize the Desktop UI
+        if (Desktop.Instance != null)
+        {
+            Desktop.Instance.Initialize(DesktopFolder);
+        }
     }
 
     public FolderNode CreateFolder(FolderNode parent, string name)
@@ -77,9 +36,9 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>
         parent.AddChild(newFolder);
         return newFolder;
     }
-    public FileNode CreateFile(FolderNode parent, string name, string content = "")
+    public FileNode CreateFile(FolderNode parent, string name, FileType type, string content = "")
     {
-        FileNode newFile = new FileNode(name, parent) { Content = content };
+        FileNode newFile = new FileNode(name, type, parent) { Content = content };
         parent.AddChild(newFile);
         return newFile;
     }
@@ -118,5 +77,62 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>
             }
         }
         return currentNode;
+    }
+}
+public abstract class FSNode
+{
+    public string Name { get; set; }
+    public FolderNode Parent { get; set; }
+
+    public string GetPath()
+    {
+        if (Parent == null) return Name; // Root node (e.g., "C:")
+        return Parent.GetPath() + "/" + Name;
+    }
+}
+public enum FileType
+{
+    Empty,
+    Text,
+    Image
+}
+public class FileNode : FSNode
+{
+    public FileType Type { get; set; }
+    public string Content { get; set; }
+
+    public FileNode(string name, FileType type, FolderNode parent)
+    {
+        Name = name;
+        Parent = parent;
+        Type = type;
+    }
+}
+public class FolderNode : FSNode
+{
+    public List<FSNode> Children { get; private set; } = new List<FSNode>();
+
+    public FolderNode(string name, FolderNode parent)
+    {
+        Name = name;
+        Parent = parent;
+    }
+
+    public void AddChild(FSNode node)
+    {
+        if (!Children.Contains(node))
+        {
+            node.Parent = this;
+            Children.Add(node);
+        }
+    }
+
+    public void RemoveChild(FSNode node)
+    {
+        if (Children.Contains(node))
+        {
+            node.Parent = null;
+            Children.Remove(node);
+        }
     }
 }

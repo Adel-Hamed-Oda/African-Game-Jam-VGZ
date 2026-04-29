@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 149300482}
   - component: {fileID: 149300483}
   - component: {fileID: 149300484}
+  - component: {fileID: 149300485}
   m_Layer: 0
   m_Name: OS
   m_TagString: Untagged
@@ -164,9 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10f6aeb43188814d8f848be92c22520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindowManager
-  dragStep: 50
-  resizeStep: 50
-  folderWindowPrefab: {fileID: 0}
+  dragStep: 10
+  resizeStep: 10
+  folderWindowPrefab: {fileID: 8413614348404025393, guid: d97966bfba984b246b4944652a15eb59, type: 3}
   textFileWindowPrefab: {fileID: 2571019114752019798, guid: 2d4337204c88ef74eabc300fec4ba481, type: 3}
   desktopTransform: {fileID: 1241903431}
 --- !u!114 &149300484
@@ -181,9 +182,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc5553e40e88a1418332bf256fb44b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IconManager
-  folderSprite: {fileID: 1084870471915973256, guid: 6c5b0e4722f5a014385327db3da31a9f, type: 3}
-  textFileSprite: {fileID: -5690122954830693929, guid: 6c5b0e4722f5a014385327db3da31a9f, type: 3}
-  unknownFileSprite: {fileID: -4842122482347598607, guid: bb9a418bfbacc1940b74260745e4d744, type: 3}
+  folderSprite: {fileID: -7957453670165720738, guid: 6e9669e9b5e69404bbd6408d6d4ec210, type: 3}
+  textFileSprite: {fileID: 785660994695051435, guid: 4d2d65517d7a9b740b495738c263eef9, type: 3}
+  unknownFileSprite: {fileID: 1360536550632444352, guid: 80de0fab8dd66754aaa67f28579c9822, type: 3}
+--- !u!114 &149300485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149300481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d46dc40fe9996a94b8a3be86ce20b683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FileSystemManager
+--- !u!1 &244088900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244088901}
+  - component: {fileID: 244088902}
+  - component: {fileID: 244088903}
+  m_Layer: 5
+  m_Name: Desktop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &244088901
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244088900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1241903431}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &244088902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244088900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 1
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
+--- !u!114 &244088903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244088900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55a2fcb48a400744a557160431a29a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Desktop
+  contentArea: {fileID: 244088901}
+  iconPrefab: {fileID: 1081431080381436752, guid: 34eaa085104375e438f93b3ca709490d, type: 3}
 --- !u!1 &1126913229
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +502,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 244088901}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

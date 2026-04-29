@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using TMPro; // Added for the window title
+using TMPro;
 
 [RequireComponent(typeof(RectTransform))]
 public class Window : MonoBehaviour, IDragHandler, IPointerDownHandler
@@ -14,18 +14,18 @@ public class Window : MonoBehaviour, IDragHandler, IPointerDownHandler
     private Vector2 _originalLocalPointerPosition;
     private Vector3 _originalPanelLocalPosition;
 
-    protected virtual void Awake() // Made virtual in case child classes need Awake
+    protected FSNode currentNode; // Added to remember which node this window represents
+
+    protected virtual void Awake()
     {
         windowRectTransform = GetComponent<RectTransform>();
-
-        // Assuming you add 'public int dragStep = 1;' to your WindowManager script!
         dragStep = WindowManager.Instance != null ? WindowManager.Instance.dragStep : 1;
     }
 
-    // Virtual so child classes can override and add their own logic
     public virtual void Initialize(FSNode node)
     {
-        // Default behavior: just set the title to the file/folder name
+        currentNode = node; // Save the node reference
+
         if (windowTitle != null)
         {
             windowTitle.text = node.Name;
@@ -34,15 +34,19 @@ public class Window : MonoBehaviour, IDragHandler, IPointerDownHandler
 
     public void CloseWindow()
     {
+        // Unregister from the WindowManager before destroying
+        if (WindowManager.Instance != null && currentNode != null)
+        {
+            WindowManager.Instance.UnregisterWindow(currentNode);
+        }
+
         Destroy(windowRectTransform.gameObject);
     }
 
     public void OnPointerDown(PointerEventData data)
     {
-        // Bring the window to the front
         windowRectTransform.SetAsLastSibling();
 
-        // Record the starting positions for dragging
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             (RectTransform)windowRectTransform.parent,
             data.position,
@@ -63,7 +67,6 @@ public class Window : MonoBehaviour, IDragHandler, IPointerDownHandler
             Vector3 offsetToOriginal = localPointerPosition - _originalLocalPointerPosition;
             Vector3 rawPosition = _originalPanelLocalPosition + offsetToOriginal;
 
-            // Snap the position to the specified increments
             if (dragStep > 0f)
             {
                 rawPosition.x = Mathf.Round(rawPosition.x / dragStep) * dragStep;

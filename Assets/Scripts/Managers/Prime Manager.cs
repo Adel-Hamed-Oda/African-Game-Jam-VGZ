@@ -1,26 +1,10 @@
 using System;
 using UnityEngine;
 
-public class PrimeManager : MonoBehaviour
+public class PrimeManager : SingletonBehaviour<PrimeManager>
 {
     public Action OnGamePaused;
     public Action OnGameResumed;
-
-    public static PrimeManager Instance { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-    }
 
     public void SetTimeScale(float scale)
     {

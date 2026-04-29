@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="93XevFfKIqJGNnGvg6Bc" name="Page-1">
-        <mxGraphModel dx="2366" dy="1222" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1692" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -72,8 +72,8 @@
                 <mxCell id="34" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Air&lt;/h1&gt;&lt;div&gt;Mostrly sky islands, can be green ones. Wind gushing everywhere with constant breeze in the background. torrents that push the player up, whcih could be used to get over obstacles in other worlds. horizontal torrents could also be used to go quickly and such&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
                     <mxGeometry x="-560" y="760" width="200" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="35" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Fire&lt;/h1&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
-                    <mxGeometry x="-560" y="960" width="200" height="160" as="geometry"/>
+                <mxCell id="35" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Fire&lt;/h1&gt;&lt;div&gt;Content includes magma ground (similar to magma blocks in minecraft). it also oncludes dangerous lava/magma lakes/rivers. It also has volcanoes in the background and maybe maybe enemies but IDK. The are gysers that occasionaly shoot fire which can be dangerous but also melt metals or ice or even create torrents&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="-560" y="960" width="200" height="200" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.625;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="12" target="12">
                     <mxGeometry relative="1" as="geometry"/>

@@ -25,6 +25,7 @@ public class IconUI : MonoBehaviour, IPointerClickHandler
         else
             nameText.text = node.Name;
 
+        UpdateNameText();
         iconImage.sprite =  ImageManager.Instance.GetImageForNode(node);
     }
 
@@ -84,6 +85,18 @@ public class IconUI : MonoBehaviour, IPointerClickHandler
 
         renameInput.gameObject.SetActive(false);
         nameText.gameObject.SetActive(true);
-        nameText.text = currentNode.Name;
+        //nameText.text = currentNode.Name;
+        UpdateNameText();
+    }
+    private void UpdateNameText()
+    {
+        if (currentNode.Name.Length > maxNameLength)
+        {
+            nameText.text = currentNode.Name.Substring(0, maxNameLength - 3) + "...";
+        }
+        else
+        {
+            nameText.text = currentNode.Name;
+        }
     }
 }

@@ -102,36 +102,38 @@ public class ContextMenuManager : SingletonBehaviour<ContextMenuManager>
     // CREATE ACTIONS
     // =========================
 
-    public void CreateText()
-    {
-        string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Text");
-        var tempNode = FileSystemManager.Instance.CreateFile(currentFolder, name, FileType.Text, "");
-        if (currentFolder == FileSystemManager.Instance.DesktopFolder)
+        public void CreateText()
         {
-            Desktop.Instance.CreateIconAndRename(tempNode);
+            string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Text");
+            var tempNode = FileSystemManager.Instance.CreateFile(currentFolder, name, FileType.Text, "");
+            if (currentFolder == FileSystemManager.Instance.DesktopFolder)
+            {
+                Desktop.Instance.CreateIconAndRename(tempNode);
+            }
+            Hide();
         }
-        else
+
+        public void CreateImage()
         {
-            Desktop.Instance.RefreshView(); // optional
+            string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Image");
+            var tempNode = FileSystemManager.Instance.CreateFile(currentFolder, name, FileType.Image, "Images/Input Prompts/keyboard");
+            if (currentFolder == FileSystemManager.Instance.DesktopFolder)
+            {
+                Desktop.Instance.CreateIconAndRename(tempNode);
+            }
+            Hide();
         }
-        Hide();
-    }
 
-    public void CreateImage()
-    {
-        string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Image");
-        var tempNode = FileSystemManager.Instance.CreateFile(currentFolder, name, FileType.Image, "Images/Input Prompts/keyboard");
-        Desktop.Instance.CreateIconAndRename(tempNode);
-        Hide();
-    }
-
-    public void CreateFolder()
-    {
-        string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Folder");
-        var tempNode = FileSystemManager.Instance.CreateFolder(currentFolder, name);
-        Desktop.Instance.CreateIconAndRename(tempNode);
-        Hide();
-    }
+        public void CreateFolder()
+        {
+            string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Folder");
+            var tempNode = FileSystemManager.Instance.CreateFolder(currentFolder, name);
+            if (currentFolder == FileSystemManager.Instance.DesktopFolder)
+            {
+                Desktop.Instance.CreateIconAndRename(tempNode);
+            }
+            Hide();
+        }
 
     // =========================
     // FILE ACTIONS

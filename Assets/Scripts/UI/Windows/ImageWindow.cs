@@ -20,6 +20,6 @@ public class ImageWindow : Window
             windowTitle.text = currentFile.Name;
         }
 
-        imageDisplay.sprite = currentFile.Image;
+        imageDisplay.sprite = ImageManager.Instance.GetImageByName(currentFile.Content);
     }
 }

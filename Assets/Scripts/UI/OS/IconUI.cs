@@ -15,7 +15,7 @@ public class IconUI : MonoBehaviour, IPointerClickHandler
         currentNode = node;
         nameText.text = node.Name;
 
-        iconImage.sprite = IconManager.Instance.GetIconForNode(node);
+        iconImage.sprite =  ImageManager.Instance.GetImageForNode(node);
     }
 
     public void OnPointerClick(PointerEventData eventData)

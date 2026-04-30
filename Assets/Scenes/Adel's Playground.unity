@@ -183,10 +183,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc5553e40e88a1418332bf256fb44b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IconManager
-  folderSprite: {fileID: -7957453670165720738, guid: 6e9669e9b5e69404bbd6408d6d4ec210, type: 3}
-  textFileSprite: {fileID: 785660994695051435, guid: 4d2d65517d7a9b740b495738c263eef9, type: 3}
-  unknownFileSprite: {fileID: 1360536550632444352, guid: 80de0fab8dd66754aaa67f28579c9822, type: 3}
-  imageFileSprite: {fileID: 0}
+  folderImageName: Icon_Folder
+  unknownImageName: Icon_Unknown
+  inspectorFileTypeIcons:
+  - imageName: Icon_Text
+    type: 1
+  - imageName: Icon_Image
+    type: 2
+  - imageName: Icon_Executable
+    type: 3
+  inspectorAllImages:
+  - imageName: Icon_Unknown
+    sprite: {fileID: 21300000, guid: ee54f37b977b7284dbfdc1101f7e3e00, type: 3}
+  - imageName: Icon_Folder
+    sprite: {fileID: 21300000, guid: ab6780d3669d45242a677ad5cef62c02, type: 3}
+  - imageName: Icon_Text
+    sprite: {fileID: 21300000, guid: bb9a418bfbacc1940b74260745e4d744, type: 3}
+  - imageName: Icon_Image
+    sprite: {fileID: 21300000, guid: d548d7e42fde24546b1b27e22f2cdf14, type: 3}
+  - imageName: Icon_Executable
+    sprite: {fileID: 21300000, guid: d9d0cd94db2a2974aac2d3ff7f7111d9, type: 3}
 --- !u!114 &149300485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d46dc40fe9996a94b8a3be86ce20b683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FileSystemManager
-  defaultImage: {fileID: 21300000, guid: 6c5b0e4722f5a014385327db3da31a9f, type: 3}
+  DeleteSaveAtStart: 1
 --- !u!1 &244088900
 GameObject:
   m_ObjectHideFlags: 0

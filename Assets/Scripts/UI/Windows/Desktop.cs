@@ -36,4 +36,30 @@ public class Desktop : MonoBehaviour
             newIcon.GetComponent<IconUI>().SetupIcon(childNode);
         }
     }
+
+    public IconUI CreateIconAndRename(FSNode node)
+    {
+        GameObject newIcon = Instantiate(iconPrefab, contentArea);
+        IconUI icon = newIcon.GetComponent<IconUI>();
+
+        icon.SetupIcon(node);
+        icon.StartRename();
+
+        RefreshView();
+
+        return icon;
+    }
+
+    public IconUI FindIcon(FSNode node)
+    {
+        foreach (Transform child in contentArea)
+        {
+            IconUI icon = child.GetComponent<IconUI>();
+            if (icon != null && icon.nameText.text == node.Name)
+            {
+                return icon;
+            }
+        }
+        return null;
+    }
 }

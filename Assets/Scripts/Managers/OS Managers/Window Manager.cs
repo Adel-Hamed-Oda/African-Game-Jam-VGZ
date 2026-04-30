@@ -64,7 +64,7 @@ public class WindowManager : MonoBehaviour
             {
                 GameObject newWindow = Instantiate(imageWindowPrefab, desktopTransform);
                 newWindowScript = newWindow.GetComponent<ImageWindow>();
-                newWindowScript.Initialize(fileNode);
+                newWindowScript.Initialize(fileNode); //this is line 67
             }
         }
 

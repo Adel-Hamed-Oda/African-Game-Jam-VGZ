@@ -87,4 +87,13 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
         }
         return currentNode;
     }
+
+    public void DeleteNode(FSNode node)
+    {
+        if (node.Parent != null)
+        {
+            node.Parent.RemoveChild(node);
+            this.Save("filesystem");
+        }
+    }
 }

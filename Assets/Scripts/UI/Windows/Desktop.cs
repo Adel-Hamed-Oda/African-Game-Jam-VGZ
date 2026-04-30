@@ -49,7 +49,7 @@ public class Desktop : MonoBehaviour
         icon.SetupIcon(node);
         icon.StartRename();
 
-        RefreshView();
+        //RefreshView();
 
         return icon;
     }
@@ -59,7 +59,7 @@ public class Desktop : MonoBehaviour
         foreach (Transform child in contentArea)
         {
             IconUI icon = child.GetComponent<IconUI>();
-            if (icon != null && icon.nameText.text == node.Name)
+            if (icon != null && icon.CurrentNode == node)
             {
                 return icon;
             }

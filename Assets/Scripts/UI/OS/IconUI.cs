@@ -10,6 +10,7 @@ public class IconUI : MonoBehaviour, IPointerClickHandler
     public Image iconImage;
 
     private FSNode currentNode;
+    public FSNode CurrentNode => currentNode;
     public int maxNameLength;
 
     public TMP_InputField renameInput;

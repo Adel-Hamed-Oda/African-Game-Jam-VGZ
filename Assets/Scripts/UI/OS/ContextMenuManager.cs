@@ -106,13 +106,20 @@ public class ContextMenuManager : SingletonBehaviour<ContextMenuManager>
     {
         string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Text");
         var tempNode = FileSystemManager.Instance.CreateFile(currentFolder, name, FileType.Text, "");
-        Desktop.Instance.CreateIconAndRename(tempNode);
+        if (currentFolder == FileSystemManager.Instance.DesktopFolder)
+        {
+            Desktop.Instance.CreateIconAndRename(tempNode);
+        }
+        else
+        {
+            Desktop.Instance.RefreshView(); // optional
+        }
         Hide();
     }
 
     public void CreateImage()
     {
-        string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Text");
+        string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Image");
         var tempNode = FileSystemManager.Instance.CreateFile(currentFolder, name, FileType.Image, "Images/Input Prompts/keyboard");
         Desktop.Instance.CreateIconAndRename(tempNode);
         Hide();
@@ -120,7 +127,7 @@ public class ContextMenuManager : SingletonBehaviour<ContextMenuManager>
 
     public void CreateFolder()
     {
-        string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Text");
+        string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Folder");
         var tempNode = FileSystemManager.Instance.CreateFolder(currentFolder, name);
         Desktop.Instance.CreateIconAndRename(tempNode);
         Hide();

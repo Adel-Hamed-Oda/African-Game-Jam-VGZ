@@ -6,6 +6,7 @@ public class IconManager : SingletonBehaviour<IconManager>
     public Sprite folderSprite;
     public Sprite textFileSprite;
     public Sprite unknownFileSprite; // A fallback icon
+    public Sprite imageFileSprite; // IMAGE WNLVAUIWNRLNVERAHBVHABLERJVBAERLVBAE
 
     // Returns the correct sprite based on the node type
     public Sprite GetIconForNode(FSNode node)
@@ -20,7 +21,8 @@ public class IconManager : SingletonBehaviour<IconManager>
             {
                 case FileType.Text:
                     return textFileSprite;
-                // You can easily add FileType.Image etc. here later
+                case FileType.Image:
+                    return imageFileSprite; // IMAGE WNLVAUIWNRLNVERAHBVHABLERJVBAERLVBAE
                 default:
                     return unknownFileSprite;
             }

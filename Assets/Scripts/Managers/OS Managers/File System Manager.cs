@@ -28,6 +28,8 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
     public FolderNode Root { get; private set; }
     public FolderNode DesktopFolder { get; private set; }
 
+    public Sprite defaultImage; // IMAGE WNLVAUIWNRLNVERAHBVHABLERJVBAE
+
     void Start()
     {
         this.DeleteSave("filesystem"); // Uncomment this line to reset your save data while testing!
@@ -171,6 +173,12 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
         SaveSystem();
         return newFile;
     }
+    public FileNode CreateFile(FolderNode parent, string name, Sprite image = null)
+    {
+        FileNode newFile = new FileNode(name, FileType.Image, parent)
+        {
+            Image = image // IMAGE WNLVAUIWNRLNVERAHBVHABLERJVBAERLVBAE
+        };
 
     public void UpdateContent(FileNode node, string newContent)
     {
@@ -233,14 +241,14 @@ public enum FileType
 {
     Empty,
     Text,
-    Image,
+    Image, // IMAGE WNLVAUIWNRLNVERAHBVHABLERJVBAERLVBAE
     Executable
 }
 public class FileNode : FSNode
 {
     public FileType Type { get; set; }
     public string Content { get; set; }
-
+    public Sprite Image { get; set; } // IMAGE WNLVAUIWNRLNVERAHBVHABLERJVBAERLVBAE
     public FileNode(string name, FileType type, FolderNode parent)
     {
         Name = name;

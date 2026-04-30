@@ -12,6 +12,7 @@ public class WindowManager : MonoBehaviour
     [Header("Window Prefabs")]
     public GameObject folderWindowPrefab;
     public GameObject textFileWindowPrefab;
+    public GameObject imageWindowPrefab; // IMAGE WNLVAUIWNRLNVERAHBVHABLERJVBAERLVBAE
 
     [Header("UI Parent")]
     public Transform desktopTransform;
@@ -57,6 +58,12 @@ public class WindowManager : MonoBehaviour
             {
                 GameObject newWindow = Instantiate(textFileWindowPrefab, desktopTransform);
                 newWindowScript = newWindow.GetComponent<TextWindow>();
+                newWindowScript.Initialize(fileNode);
+            }
+            else if (fileNode.Type == FileType.Image) // IMAGE WNLVAUIWNRLNVERAHBVHABLERJVBAERLVBAE
+            {
+                GameObject newWindow = Instantiate(imageWindowPrefab, desktopTransform);
+                newWindowScript = newWindow.GetComponent<ImageWindow>();
                 newWindowScript.Initialize(fileNode);
             }
         }

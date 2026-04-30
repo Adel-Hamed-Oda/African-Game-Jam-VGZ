@@ -30,7 +30,7 @@ public class TextWindow : Window
     {
         if (currentFile != null)
         {
-            currentFile.Content = newText;
+            FileSystemManager.Instance.UpdateContent(currentFile, newText);
         }
     }
 }

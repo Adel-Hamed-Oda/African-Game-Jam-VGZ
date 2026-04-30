@@ -17,22 +17,33 @@ public static class SerializableExtensions
 
         Directory.CreateDirectory(SavePath);
         File.WriteAllText(FullPath(key), json);
-
-        Debug.Log($"Saved {key} to {FullPath(key)}");
     }
 
-    public static void Load<TData>(this ISerializable<TData> target, string key) where TData : class, new()
+    public static bool Load<TData>(this ISerializable<TData> target, string key) where TData : class, new()
     {
         string path = FullPath(key);
 
         if (!File.Exists(path))
         {
             Debug.LogWarning($"No save file found at {path}");
-            return;
+            return false;
         }
 
         target.SaveData = JsonUtility.FromJson<TData>(File.ReadAllText(path));
+        return true;
+    }
 
-        Debug.Log($"Loaded {key} from {path}");
+    public static bool SaveExists<TData>(this ISerializable<TData> target, string key) where TData : class, new()
+    {
+        return File.Exists(FullPath(key));
+    }
+
+    public static void DeleteSave<TData>(this ISerializable<TData> target, string key) where TData : class, new()
+    {
+        string path = FullPath(key);
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
     }
 }

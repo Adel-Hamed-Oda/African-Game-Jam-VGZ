@@ -97,10 +97,6 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
             node.Parent.RemoveChild(node);
             this.Save("filesystem");
         }
-        else
-        {
-            Debug.LogError("Node has NO parent so cannot delete");
-        }
     }
 
     private void RebuildParentLinks(FolderNode folder)
@@ -114,5 +110,19 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
                 RebuildParentLinks(childFolder);
             }
         }
+    }
+
+    public string GetUniqueName(FolderNode parent, string baseName, FSNode ignoreNode = null)
+    {
+        string newName = baseName;
+        int counter = 1;
+
+        while (parent.Children.Exists(c => c.Name == newName && c != ignoreNode))
+        {
+            newName = $"{baseName} ({counter})";
+            counter++;
+        }
+
+        return newName;
     }
 }

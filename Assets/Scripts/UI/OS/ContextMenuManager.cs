@@ -104,21 +104,24 @@ public class ContextMenuManager : SingletonBehaviour<ContextMenuManager>
 
     public void CreateText()
     {
-        var tempNode = FileSystemManager.Instance.CreateFile(currentFolder, "New Text", FileType.Text, "");
+        string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Text");
+        var tempNode = FileSystemManager.Instance.CreateFile(currentFolder, name, FileType.Text, "");
         Desktop.Instance.CreateIconAndRename(tempNode);
         Hide();
     }
 
     public void CreateImage()
     {
-        var tempNode = FileSystemManager.Instance.CreateFile(currentFolder, "New Image", FileType.Image, "Images/Input Prompts/keyboard");
+        string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Text");
+        var tempNode = FileSystemManager.Instance.CreateFile(currentFolder, name, FileType.Image, "Images/Input Prompts/keyboard");
         Desktop.Instance.CreateIconAndRename(tempNode);
         Hide();
     }
 
     public void CreateFolder()
     {
-        var tempNode = FileSystemManager.Instance.CreateFolder(currentFolder, "New Folder");
+        string name = FileSystemManager.Instance.GetUniqueName(currentFolder, "New Text");
+        var tempNode = FileSystemManager.Instance.CreateFolder(currentFolder, name);
         Desktop.Instance.CreateIconAndRename(tempNode);
         Hide();
     }

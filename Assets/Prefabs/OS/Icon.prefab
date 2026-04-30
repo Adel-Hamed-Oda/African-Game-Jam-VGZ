@@ -53,6 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IconUI
   nameText: {fileID: 6474663908330821937}
   iconImage: {fileID: 3197176391733670333}
+  maxNameLength: 11
   renameInput: {fileID: 814458334745239605}
 --- !u!1 &1496580040580882968
 GameObject:

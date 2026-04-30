@@ -10,13 +10,19 @@ public class IconUI : MonoBehaviour, IPointerClickHandler
     public Image iconImage;
 
     private FSNode currentNode;
+    public int maxNameLength;
 
     public TMP_InputField renameInput;
 
     public void SetupIcon(FSNode node)
     {
         currentNode = node;
-        nameText.text = node.Name;
+        if (node.Name.Length > maxNameLength)
+        {
+            nameText.text = node.Name.Substring(0, maxNameLength - 3) + "...";
+        }
+        else
+            nameText.text = node.Name;
 
         iconImage.sprite =  ImageManager.Instance.GetImageForNode(node);
     }
@@ -49,13 +55,31 @@ public class IconUI : MonoBehaviour, IPointerClickHandler
         renameInput.onEndEdit.AddListener(OnRenameFinished);
     }
 
+    //private void OnRenameFinished(string newName)
+    //{
+    //    if (!string.IsNullOrWhiteSpace(newName))
+    //    {
+    //        currentNode.Name = newName;
+    //        FileSystemManager.Instance.Save("filesystem");
+    //    }
+
+    //    renameInput.gameObject.SetActive(false);
+    //    nameText.gameObject.SetActive(true);
+    //    nameText.text = currentNode.Name;
+    //}
+
     private void OnRenameFinished(string newName)
     {
-        if (!string.IsNullOrWhiteSpace(newName))
-        {
-            currentNode.Name = newName;
-            FileSystemManager.Instance.Save("filesystem");
-        }
+        if (string.IsNullOrWhiteSpace(newName))
+            newName = currentNode.Name;
+
+        FolderNode parent = currentNode.Parent;
+
+        newName = FileSystemManager.Instance.GetUniqueName(parent, newName, currentNode);
+
+        currentNode.Name = newName;
+
+        FileSystemManager.Instance.Save("filesystem");
 
         renameInput.gameObject.SetActive(false);
         nameText.gameObject.SetActive(true);

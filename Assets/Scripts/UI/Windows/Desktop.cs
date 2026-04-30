@@ -18,6 +18,10 @@ public class Desktop : MonoBehaviour
     public void Initialize(FolderNode folder)
     {
         desktopFolder = folder;
+        foreach (Transform child in contentArea)
+        {
+            Destroy(child.gameObject);
+        }
         RefreshView();
     }
 

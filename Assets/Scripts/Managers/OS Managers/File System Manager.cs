@@ -24,6 +24,7 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
         if (this.SaveExists("filesystem"))
         {
             this.Load("filesystem");
+            RebuildParentLinks(SaveData.Root);
             DesktopFolder = GetNodeByPath("C:/Desktop") as FolderNode;
         }
         else
@@ -90,10 +91,30 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
 
     public void DeleteNode(FSNode node)
     {
+        Debug.Log("Deleting node: " + node?.Name);
+        Debug.Log("Parent: " + node?.Parent);
+
         if (node.Parent != null)
         {
             node.Parent.RemoveChild(node);
             this.Save("filesystem");
+        }
+        else
+        {
+            Debug.LogError("Node has NO parent so cannot delete");
+        }
+    }
+
+    private void RebuildParentLinks(FolderNode folder)
+    {
+        foreach (var child in folder.Children)
+        {
+            child.Parent = folder;
+
+            if (child is FolderNode childFolder)
+            {
+                RebuildParentLinks(childFolder);
+            }
         }
     }
 }

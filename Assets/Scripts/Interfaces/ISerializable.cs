@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json; // Add this!
+﻿using Newtonsoft.Json;
 using System.IO;
 using UnityEngine;
 

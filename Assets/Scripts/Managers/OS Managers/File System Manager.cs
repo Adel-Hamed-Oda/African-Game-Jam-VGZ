@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,8 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
 
     public FSData SaveData { get; set; } = new();
 
-    // Convenience getters
-    public FolderNode Root => SaveData.Root;
+    public Sprite defaultImage; // IMAGE WNLVAUIWNRLNVERAHBVHABLERJVBAERLVBAE
+
     public FolderNode DesktopFolder { get; private set; }
 
     void Start()
@@ -38,9 +39,10 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
     private void CreateNewInstance()
     {
         SaveData.Root = new FolderNode("C:", null);
-        DesktopFolder = CreateFolder(Root, "Desktop");
+        DesktopFolder = CreateFolder(SaveData.Root, "Desktop");
 
-        CreateFile(DesktopFolder, "Readme", FileType.Text, "Welcome to the new system!");
+        CreateFile(DesktopFolder,"Bruh", defaultImage);
+        CreateFile(DesktopFolder, "Readme.txt", "Welcome to the OS Simulation! This is a sample text file on your desktop. Feel free to open it and explore the contents. You can create new folders and files, and even customize your desktop with images! Enjoy your experience simulating an operating system environment.");
 
         this.Save("filesystem");
     }
@@ -53,9 +55,23 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
         return newFolder;
     }
 
-    public FileNode CreateFile(FolderNode parent, string name, FileType type, string content = "")
+    public FileNode CreateFile(FolderNode parent, string name, FileType type)
     {
-        FileNode newFile = new FileNode(name, type, parent) { Content = content };
+        FileNode newFile = new FileNode(name, type, parent);
+        parent.AddChild(newFile);
+        this.Save("filesystem");
+        return newFile;
+    }
+    public FileNode CreateFile(FolderNode parent, string name, string content)
+    {
+        FileNode newFile = new FileNode(name, FileType.Text, parent) { Content = content };
+        parent.AddChild(newFile);
+        this.Save("filesystem");
+        return newFile;
+    }
+    public FileNode CreateFile(FolderNode parent, string name, Sprite Image)
+    {
+        FileNode newFile = new FileNode(name, FileType.Image, parent) { Image = Image };
         parent.AddChild(newFile);
         this.Save("filesystem");
         return newFile;
@@ -70,9 +86,9 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
     public FSNode GetNodeByPath(string path)
     {
         string[] parts = path.Split('/');
-        if (parts[0] != Root.Name) return null;
+        if (parts[0] != SaveData.Root.Name) return null;
 
-        FSNode currentNode = Root;
+        FSNode currentNode = SaveData.Root;
         for (int i = 1; i < parts.Length; i++)
         {
             if (currentNode is FolderNode folder)
@@ -107,6 +123,8 @@ public class FileNode : FSNode
 {
     public FileType Type { get; set; }
     public string Content { get; set; }
+
+    [JsonIgnore]
     public Sprite Image { get; set; } // IMAGE WNLVAUIWNRLNVERAHBVHABLERJVBAERLVBAE
     public FileNode(string name, FileType type, FolderNode parent)
     {

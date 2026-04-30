@@ -45,6 +45,7 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
 
         CreateFile(DesktopFolder, "Readme.txt", FileType.Text, "Welcome to the OS Simulation! This is a sample text file on your desktop. Feel free to open it and explore the contents. You can create new folders and files, and even customize your desktop with images! Enjoy your experience simulating an operating system environment.");
         CreateFile(DesktopFolder, "Picture.png", FileType.Image, "Icon_Folder");
+        CreateFile(DesktopFolder, "Water.exe", FileType.Executable, "Water");
 
         this.Save("filesystem");
     }
@@ -91,9 +92,6 @@ public class FileSystemManager : SingletonBehaviour<FileSystemManager>, ISeriali
 
     public void DeleteNode(FSNode node)
     {
-        Debug.Log("Deleting node: " + node?.Name);
-        Debug.Log("Parent: " + node?.Parent);
-
         if (node.Parent != null)
         {
             node.Parent.RemoveChild(node);

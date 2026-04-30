@@ -18,7 +18,7 @@ public class ContextMenuManager : SingletonBehaviour<ContextMenuManager>
     private bool isOpen = false;
 
 
-    private void Awake()
+    protected override void Awake()
     {
         base.Awake();
         Hide();

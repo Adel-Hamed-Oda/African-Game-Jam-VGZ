@@ -13,6 +13,7 @@ public class WindowManager : MonoBehaviour
     public GameObject folderWindowPrefab;
     public GameObject textFileWindowPrefab;
     public GameObject imageWindowPrefab; // IMAGE WNLVAUIWNRLNVERAHBVHABLERJVBAERLVBAE
+    public GameObject waterWindowPrefab; // Assign your new prefab here in the Inspector!
 
     [Header("UI Parent")]
     public Transform desktopTransform;
@@ -65,6 +66,20 @@ public class WindowManager : MonoBehaviour
                 GameObject newWindow = Instantiate(imageWindowPrefab, desktopTransform);
                 newWindowScript = newWindow.GetComponent<ImageWindow>();
                 newWindowScript.Initialize(fileNode); //this is line 67
+            }
+            else if (fileNode.Type == FileType.Executable)
+            {
+                if (fileNode.Content == "Water")
+                {
+                    GameObject newWindow = Instantiate(waterWindowPrefab, desktopTransform);
+                    newWindowScript = newWindow.GetComponent<WaterWindow>();
+                    newWindowScript.Initialize(fileNode);
+                }
+                else
+                {
+                    Debug.LogWarning("Unknown Executable: " + fileNode.Content);
+                    return;
+                }
             }
         }
 

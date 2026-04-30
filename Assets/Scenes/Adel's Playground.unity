@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 149300483}
   - component: {fileID: 149300484}
   - component: {fileID: 149300485}
+  - component: {fileID: 149300486}
   m_Layer: 0
   m_Name: OS
   m_TagString: Untagged
@@ -170,6 +171,7 @@ MonoBehaviour:
   folderWindowPrefab: {fileID: 8413614348404025393, guid: d97966bfba984b246b4944652a15eb59, type: 3}
   textFileWindowPrefab: {fileID: 2571019114752019798, guid: 2d4337204c88ef74eabc300fec4ba481, type: 3}
   imageWindowPrefab: {fileID: 2571019114752019798, guid: 51f1231c094a1e049a22cb93c68ee6ea, type: 3}
+  waterWindowPrefab: {fileID: 7181722230137436835, guid: caf5ee5a01b11e0429b67c749e8729f3, type: 3}
   desktopTransform: {fileID: 1241903431}
 --- !u!114 &149300484
 MonoBehaviour:
@@ -215,7 +217,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d46dc40fe9996a94b8a3be86ce20b683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FileSystemManager
-  DeleteSaveAtStart: 0
+  DeleteSaveAtStart: 1
+--- !u!114 &149300486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149300481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83873b502ee00f44b9658a3ab962cc62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ContextMenuManager
+  menuObject: {fileID: 941618100}
+  createGroup: {fileID: 765818709}
+  fileGroup: {fileID: 350019716}
 --- !u!1 &244088900
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +645,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 941618105}
+      - m_Target: {fileID: 149300486}
         m_TargetAssemblyTypeName: ContextMenuManager, Assembly-CSharp
         m_MethodName: CreateImage
         m_Mode: 1
@@ -782,7 +799,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 941618105}
+      - m_Target: {fileID: 149300486}
         m_TargetAssemblyTypeName: ContextMenuManager, Assembly-CSharp
         m_MethodName: Rename
         m_Mode: 1
@@ -936,7 +953,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 941618105}
+      - m_Target: {fileID: 149300486}
         m_TargetAssemblyTypeName: ContextMenuManager, Assembly-CSharp
         m_MethodName: CreateText
         m_Mode: 1
@@ -1219,7 +1236,6 @@ GameObject:
   - component: {fileID: 941618104}
   - component: {fileID: 941618103}
   - component: {fileID: 941618102}
-  - component: {fileID: 941618105}
   - component: {fileID: 941618106}
   - component: {fileID: 941618107}
   m_Layer: 5
@@ -1314,21 +1330,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941618100}
   m_CullTransparentMesh: 1
---- !u!114 &941618105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941618100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83873b502ee00f44b9658a3ab962cc62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ContextMenuManager
-  menuObject: {fileID: 941618100}
-  createGroup: {fileID: 765818709}
-  fileGroup: {fileID: 350019716}
 --- !u!114 &941618106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,7 +1584,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 941618105}
+      - m_Target: {fileID: 149300486}
         m_TargetAssemblyTypeName: ContextMenuManager, Assembly-CSharp
         m_MethodName: CreateFolder
         m_Mode: 1
@@ -1758,6 +1759,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 0
+  m_RequiresOpaqueTextureOption: 0
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &1241903427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,7 +2159,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 941618105}
+      - m_Target: {fileID: 149300486}
         m_TargetAssemblyTypeName: ContextMenuManager, Assembly-CSharp
         m_MethodName: Delete
         m_Mode: 1

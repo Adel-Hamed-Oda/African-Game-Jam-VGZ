@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d46dc40fe9996a94b8a3be86ce20b683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FileSystemManager
-  DeleteSaveAtStart: 1
+  DeleteSaveAtStart: 0
 --- !u!1 &244088900
 GameObject:
   m_ObjectHideFlags: 0
